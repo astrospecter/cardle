@@ -16,7 +16,7 @@ app.use(express.urlencoded({extended: true }));
 app.get("/", (req, res) => {
     res.json({message: "Welcome to Cardle"});
 });
-require("./app/routes/tutorial.routes.js")(app);
+require("./routes/tutorial.routes.js")(app);
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
