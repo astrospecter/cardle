@@ -15,10 +15,10 @@ export default App;
 
 Data to track:
   -- solution
-    -- car make, model, country, name?
+    -- car make, model, country, name?, cylinder number
   -- past guesses
     -- a chart of past guesses
-    -- each past guess is a separate car object composed of objects make, model, country, name
+    -- each past guess is a separate car object composed of objects make, model, country, name, cylinder number
     -- each separate object within car contains a "distance" away from the correct answer
   -- current guess
     -- object car
@@ -41,6 +41,7 @@ Game Process:
       -- model: alphabetical
       -- country: distance? or continent
       -- name: alphabetical
+      -- cylinder: greater or less
     -- guess is added to  grid with correct symbols/colors
     -- current guess moves to the next row
   -- ending the game:
