@@ -1,5 +1,7 @@
 -- REM   Script: Car Database
 -- REM   Database to perform Advanced DML, PL/SQL, Triggers, Procedure and Functions
+-- from: https://livesql.oracle.com/apex/livesql/file/content_FQNA3K715I7FGP083V0VL8763.html
+
 USE carsdb;
 
 
