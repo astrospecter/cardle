@@ -2,6 +2,11 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const [solution, setSolution] = useState(null)
+  
+  // set solution?
+
+  
   return (
     <div className="App">
       <h1>Cardle</h1>
