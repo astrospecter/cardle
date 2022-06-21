@@ -24,3 +24,6 @@ Car.findById = (id, result) => {
         result({kind: "not_found"}, null);
     });
 };
+// find by name
+
+module.exports = Car;
