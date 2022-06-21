@@ -25,5 +25,19 @@ Car.findById = (id, result) => {
     });
 };
 // find by name
+Car.findByName = (name, result) => {
+    sql.query(`SELECT * FROM Car_Names WHERE model = ${name}`, (err, res) => {
+        if (err) {
+            console.log("error: ", err);
+            result(err, null);
+            return;
+        }
+        if (res.length) {
+            console.log("found car: ", res[0]);
+            return;
+        }
+        result({kind: "not_found"}, null);
+    });
+};
 
 module.exports = Car;
