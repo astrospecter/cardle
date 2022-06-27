@@ -9,7 +9,15 @@ export default function Cardle({ solution }) {
 
         return () => window.removeEventListener('keyup', handleKeyup)
     }, [handleKeyup])
+
+    useEffect(() => {
+        console.log(guesses, turn, isCorrect)
+    }, [guesses, turn, isCorrect])
+
     return (
-        <div>Current Guess - {currentGuess}</div>
+        <div>
+            <div>solution - {solution}</div>
+            <div>Current Guess- {currentGuess}</div>
+        </div>
     )
 }
