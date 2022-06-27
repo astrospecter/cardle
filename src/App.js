@@ -10,8 +10,9 @@ function App() {
   return (
     <div className="App">
       <h1>Cardle</h1>
+      {solution && <Cardle solution={solution} />}
     </div>
-  );
+  )
 }
 
 export default App;
