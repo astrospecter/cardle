@@ -19,7 +19,21 @@ const useCardle = (solution) => {
     // update the isCorrect state if the guess is correct
     // add one to the turn state
     const addNewGuess = () => {
-
+        if (currentGuess === solution) {
+            setIsCorrect(true)
+        }
+        setGuesses(prevGuesses => {
+            let newGuesses = [...prevGuesses]
+            newGuesses[turn] = formattedGuess
+            return newGuesses
+        })
+        setHistory(prevHistory => {
+            return [...prevHistory, currentGuess]
+        })
+        setTurn(prevTurn => {
+            return prevTurn + 1
+        })
+        setCurrentGuess('')
     }
 
     // track current guess
@@ -43,7 +57,7 @@ const useCardle = (solution) => {
             return
         }
         if (/^[A-Za-z]$/.test(key)) {
-            // TODO
+            // TODO, in react-wordle, this is for make sure your guesses are only 5 chars long
         }
     }
 
