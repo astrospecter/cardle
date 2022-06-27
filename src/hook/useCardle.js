@@ -26,6 +26,17 @@ const useCardle = (solution) => {
     // if user presses enter, add new guess
     const handleKeyup = () => {
         console.log('key pressed - ', key)
+
+        // check for turns left
+        if (turn > 5) {
+            console.log('you used all of your guesses!')
+            return
+        }
+        // no duplicates
+        if (history.includes(currentGuess)) {
+            console.log('you already tried that car.')
+            return
+        }
         
         if (key === 'Backspace') {
             setCurrentGuess(prev => prev.slice(0, -1))
@@ -34,9 +45,9 @@ const useCardle = (solution) => {
         if (/^[A-Za-z]$/.test(key)) {
             // TODO
         }
-    }]
+    }
 
-    
+
     return {turn, currentGuess, guesses, isCorrect, handleKeyup}
     
 }
