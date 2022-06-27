@@ -25,8 +25,18 @@ const useCardle = (solution) => {
     // track current guess
     // if user presses enter, add new guess
     const handleKeyup = () => {
+        console.log('key pressed - ', key)
+        
+        if (key === 'Backspace') {
+            setCurrentGuess(prev => prev.slice(0, -1))
+            return
+        }
+        if (/^[A-Za-z]$/.test(key)) {
+            // TODO
+        }
+    }]
 
-    }
+    
     return {turn, currentGuess, guesses, isCorrect, handleKeyup}
     
 }
