@@ -56,9 +56,6 @@ const useCardle = (solution) => {
             setCurrentGuess(prev => prev.slice(0, -1))
             return
         }
-        if (/^[A-Za-z]$/.test(key)) {
-            // TODO, in react-wordle, this is for make sure your guesses are only 5 chars long
-        }
     }
 
 
