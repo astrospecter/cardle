@@ -16,4 +16,8 @@ export default class Car extends Component {
             }
         }
     }
+
+    componentDidMount() {
+        this.getCar(this.props.match.params.id); // TODO: ???
+    }
 }
