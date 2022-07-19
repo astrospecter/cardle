@@ -43,10 +43,10 @@ Game Process:
   -- checking submitted cars
     -- each object within the car object is checked for a distance away from the actual
     -- if the object doesn't match the actual the "distance" away from the actual answer is calculated
-      -- make: alphabetical
-      -- model: alphabetical
+      -- make: correct or incorrect
+      -- model: correct or incorrect
       -- country: distance? or continent
-      -- name: alphabetical
+      -- year: greater or less
       -- cylinder: greater or less
     -- guess is added to  grid with correct symbols/colors
     -- current guess moves to the next row
