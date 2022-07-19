@@ -1,6 +1,5 @@
 // skeleton of this code is found at bezkoder.com/node-js-rest-api-mysql
 
-
 const express = require("express");
 const cors = require("cors");
 const app = express();
@@ -20,5 +19,5 @@ require("./routes/tutorial.routes.js")(app);
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
-    console.log('Server is running on port ${PORT}.');
+    console.log(`Server is running on port ${PORT}.`);
 });
