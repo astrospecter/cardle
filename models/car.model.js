@@ -10,7 +10,7 @@ const Car = function(car) {
 };
 // find by name
 Car.findByName = (name, result) => {
-    sql.query(`SELECT id FROM Car_Names WHERE model = ${name}`, (err, res) => {
+    sql.query(`SELECT id FROM Car_Names WHERE model = ${name}`, (err, res) => { // TODO: model = name might need to be name = name
         if (err) {
             console.log("error: ", err);
             result(err, null);
@@ -36,6 +36,19 @@ Car.getModelById = (id, result) => {
         }
         result({kind: "not_found"}, null);
     });
+}
+Car.getNameById = (id, result) => {
+    // TODO
+}
+Car.getCountryById = (id, result) => {
+    // TODO
+    // This will be the country id, not the actual country by string
+}
+Car.getCylindersById = (id, result) => {
+    // TODO
+}
+Car.getYearById = (id, result) => {
+    // TODO
 }
 
 module.exports = Car;
