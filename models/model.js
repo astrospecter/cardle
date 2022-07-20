@@ -8,22 +8,6 @@ const Car = function(car) {
     this.cylinders = car.cylinders;
     this.year = car.year;
 };
-Car.findDetailsById = (id, result) => {
-    sql.query(`SELECT id FROM Car_Details WHERE id = ${id}`, (err, res) => {
-        if (err) {
-            console.log("error: ", err);
-            result(err, null);
-            return;
-        }
-        if (res.length) {
-            console.log("found car: ", res[0]);
-            result(null, res[0]);
-            return;
-        }
-        // if not found car with the id
-        result({kind: "not_found"}, null);
-    });
-};
 // find by name
 Car.findByName = (name, result) => {
     sql.query(`SELECT id FROM Car_Names WHERE model = ${name}`, (err, res) => {
@@ -33,7 +17,7 @@ Car.findByName = (name, result) => {
             return;
         }
         if (res.length) {
-            console.log("found car: ", res[0]);
+            console.log("found car: ", res);
             return;
         }
         result({kind: "not_found"}, null);
