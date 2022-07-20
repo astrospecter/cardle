@@ -17,7 +17,7 @@ export default class CarObject extends Component {
     }
 
     updateCarInfo(id) {
-        // updates car details based on the dbs
+        // updates car details based on the id
         this.make = Car.getModelById(id);
         this.model = Car.getNameById(id);
         this.country = Car.getCountryById(id);
@@ -31,5 +31,10 @@ export default class CarObject extends Component {
 
     getContinentbyCountry() {
         // get the continent
+    }
+
+    getDetailsByName(name) {
+        id = Car.findByName(name);
+        this.updateCarInfo(id);
     }
 }
