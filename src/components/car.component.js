@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Car from '../models/car.model.js';
 
 export default class CarObject extends Component {
-    constructor(props) {
+    constructor(props) { // what is props?
         super(props);
         
         this.make = "";
@@ -18,7 +18,7 @@ export default class CarObject extends Component {
 
     updateCarInfo(id) {
         // updates car details based on the dbs
-        this.model = Car.getModelById(id);
+        this.make = Car.getModelById(id);
     }
 
     getCountryName() {
