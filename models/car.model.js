@@ -39,6 +39,18 @@ Car.getModelById = (id, result) => {
 }
 Car.getNameById = (id, result) => {
     // TODO
+    sql.query(`SELECT Descr FROM Car_Names WHERE id = ${id}`, (err, res) => {
+        if (err) {
+            console.log("error: ", err);
+            result(err, null);
+            return;
+        }
+        if (res.length) {
+            console.log("found model: ", res);
+            return;
+        }
+        result({kind: "not_found"}, null);
+    });
 }
 Car.getCountryById = (id, result) => {
     // TODO
