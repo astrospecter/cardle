@@ -57,10 +57,22 @@ Car.getCountryById = (id, result) => {
     // This will be the country id, not the actual country by string
 }
 Car.getCylindersById = (id, result) => {
-    // TODO
+    // gets number of cylinders by id
+    sql.query(`SELECT cylinders FROM Car_Details WHERE id = ${id}`, (err, res) => {
+        if (err) {
+            console.log("error: ", err);
+            result(err, null);
+            return;
+        }
+        if (res.length) {
+            console.log("found year: ", res);
+            return;
+        }
+        result({kind: "not_found"}, null);
+    })
 }
 Car.getYearById = (id, result) => {
-    // TODO
+    // gets year by car id
     sql.query(`SELECT year FROM Car_Details WHERE id = ${id}`, (err, res) => {
         if (err) {
             console.log("error: ", err);
