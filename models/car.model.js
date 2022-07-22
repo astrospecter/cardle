@@ -18,6 +18,7 @@ Car.findByName = (name, result) => {
         }
         if (res.length) {
             console.log("found car: ", res);
+            result(null, res[0]);
             return;
         }
         result({kind: "not_found"}, null);
@@ -32,6 +33,7 @@ Car.getModelById = (id, result) => {
         }
         if (res.length) {
             console.log("found model: ", res);
+            result(null, res[0]);
             return;
         }
         result({kind: "not_found"}, null);
@@ -47,6 +49,7 @@ Car.getNameById = (id, result) => {
         }
         if (res.length) {
             console.log("found model: ", res);
+            result(null, res[0]);
             return;
         }
         result({kind: "not_found"}, null);
@@ -66,6 +69,7 @@ Car.getCylindersById = (id, result) => {
         }
         if (res.length) {
             console.log("found year: ", res);
+            result(null, res[0]);
             return;
         }
         result({kind: "not_found"}, null);
@@ -81,6 +85,7 @@ Car.getYearById = (id, result) => {
         }
         if (res.length) {
             console.log("found year: ", res);
+            result(null, res[0]);
             return;
         }
         result({kind: "not_found"}, null);
