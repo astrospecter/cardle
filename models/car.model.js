@@ -58,6 +58,47 @@ Car.getNameById = (id, result) => {
 Car.getCountryById = (id, result) => {
     // TODO
     // This will be the country id, not the actual country by string
+    sql.query(`SELECT Model FROM Car_Names WHERE id = ${id}`, (err, res1) => {
+        if (err) {
+            console.log("error: ", err);
+            result(err, null);
+            return;
+        }
+        else if (res1.length) {
+            console.log("Car.getCountryById part 1 success: ", res1);
+        }
+        else {
+            result({kind: "not_found"}, null);
+            return;
+        }
+    });
+    sql.query(`SELECT Maker FROM Model_Details WHERE Model = ${res1[0]}`, (err, res2) => {
+        if (err) {
+            console.log("error: ", null);
+            result(err, null);
+            return;
+        }
+        else if (res2.length) {
+            console.log("Car.getCountryById part 2 success: ", res2);
+        }
+        else {
+            result({kind: "not_found"}, null);
+            return;
+        }
+    });
+    sql.query(`SELECT Country FROM Car_Makers WHERE Maker = ${res2[0]}`, (err, res3) => {
+        if (err) {
+            console.log("error; ", null);
+            result(err, null);
+            return;
+        }
+        if (res3.length) {
+            console.log("Country ID found: ", res3);
+            result(null, res3[0]);
+            return;
+        }
+        result({kind: "not_found"}, null);
+    })
 }
 Car.getCylindersById = (id, result) => {
     // gets number of cylinders by id
