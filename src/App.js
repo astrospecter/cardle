@@ -8,6 +8,9 @@ function App() {
   
   // set solution?
   
+  const randomSolution = CarObject();
+  randomSolution.updateCarInfo(Math.floor(Math.random() * 406));
+  setSolution(randomSolution.model);
   
   
   return (
