@@ -1,11 +1,14 @@
 import './App.css';
+import React, { Component } from "react";
+import Car from '../models/car.model.js';
+import CarObject from "./components/car.component.js";
 
 function App() {
   const [solution, setSolution] = useState(null)
   
   // set solution?
   
-
+  
   
   return (
     <div className="App">
