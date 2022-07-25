@@ -5,6 +5,7 @@ export default class CarObject extends Component {
     constructor(props) { // what is props?
         super(props);
         
+        this.id;
         this.make = "";
         this.model = "";
         this.country = 0; // this is the country id, country name will be given by the db
