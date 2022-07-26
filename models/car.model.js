@@ -146,7 +146,23 @@ Car.getAllCarNamesById = (id, result) => {
             return;
         }
         result({kind: "not_found"}, null);
-    })
+    });
+}
+Car.getAllDetailsById = (id, result) => {
+    // combine all info into as few queries as possible
+    sql.query(`SELECT cylinders, year FROM Car_Details WHERE id = ${id}`, (err, res) => {
+        if (err) {
+            console.log("error: ", err);
+            result(err, null);
+            return;
+        }
+        if (res.length) {
+            console.log("found: ", res);
+            result(null, res);
+            return;
+        }
+        result({kind: "not_found"}, null);
+    });
 }
 
 module.exports = Car;
