@@ -19,8 +19,7 @@ export default class CarObject extends Component {
 
     updateCarInfo(id) {
         // updates car details based on the id
-        this.make = Car.getModelById(id);
-        this.model = Car.getNameById(id);
+        this.make, this.model = Car.getAllCarNamesById(id);
         this.country = Car.getCountryById(id);
         this.cylinders = Car.getCylindersById(id);
         this.year = Car.getYearById(id);
