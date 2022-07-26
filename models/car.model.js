@@ -132,5 +132,21 @@ Car.getYearById = (id, result) => {
         result({kind: "not_found"}, null);
     });
 }
+Car.getAllCarNamesById = (id, result) => {
+    // combine all info into as few queries as possible
+    sql.query(`SELECT Model, Descr FROM Car_Names WHERE id = ${id}`, (err, res) => {
+        if (err) {
+            console.log("error: ", err);
+            result(err, null);
+            return;
+        }
+        if (res.length) {
+            console.log("found: ", res);
+            result(null, res);
+            return;
+        }
+        result({kind: "not_found"}, null);
+    })
+}
 
 module.exports = Car;
