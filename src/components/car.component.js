@@ -1,14 +1,14 @@
 import React, { Component } from "react";
-import Car from '../models/car.model.js';
 
 export default class CarObject extends Component {
     constructor(props) { // what is props?
         super(props);
         
         this.id;
+        this.name = "";
         this.make = "";
         this.model = "";
-        this.country = 0; // this is the country id, country name will be given by the db
+        this.country = "";
         this.cylinders = 0;
         this.year = 0;
     }
@@ -19,9 +19,6 @@ export default class CarObject extends Component {
 
     updateCarInfo(id) {
         // updates car details based on the id
-        this.make, this.model = Car.getAllCarNamesById(id);
-        this.country = Car.getCountryById(id);
-        this.cylinders, this.year = Car.getAllDetailsById(id);
     }
 
     getCountryName() {
@@ -33,7 +30,5 @@ export default class CarObject extends Component {
     }
 
     getDetailsByName(name) {
-        id = Car.findByName(name);
-        this.updateCarInfo(id);
     }
 }
