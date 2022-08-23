@@ -15,7 +15,7 @@ function App() {
         const randomSolution = json[Math.floor(Math.random()*json.length)]
         setSolution(randomSolution.name)
       })
-  }, [setSolution]))
+  }, [setSolution])
   
   
   return (
