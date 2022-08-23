@@ -1,5 +1,5 @@
 import './App.css';
-import React, { Component } from "react";
+import React, { Component, useEffect } from "react";
 import Car from '../models/car.model.js';
 import CarObject from "./components/car.component.js";
 
@@ -8,9 +8,14 @@ function App() {
   
   // set solution?
   
-  const randomSolution = CarObject();
-  randomSolution.updateCarInfo(Math.floor(Math.random() * 406));
-  setSolution(randomSolution.model);
+  useEffect(() => {
+    fetch('http://localhost:3001/solutions')
+      .then(res => res.json())
+      .then(json => {
+        const randomSolution = json[Math.floor(Math.random()*json.length)]
+        setSolution(randomSolution.name)
+      })
+  }, [setSolution]))
   
   
   return (
