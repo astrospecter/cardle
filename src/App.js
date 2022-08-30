@@ -14,7 +14,7 @@ function App() {
         const randomSolution = json[Math.floor(Math.random() * json.length)]
 
         // update state
-        setSolution(randomSolution)
+        setSolution(randomSolution.Name)
       })
   }, [setSolution])
   
@@ -22,6 +22,7 @@ function App() {
   return (
     <div className="App">
       <h1>Cardle</h1>
+      {solution && <div>Solution is: {solution} </div>}
     </div>
   )
 }
