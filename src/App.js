@@ -10,9 +10,13 @@ function App() {
     fetch('http://localhost:3001/solutions')
       .then(res => res.json())
       .then(json => {
-        console.log(json)
+        // generate random int between length of json array
+        const randomSolution = json[Math.floor(Math.random() * json.length)]
+
+        // update state
+        setSolution(randomSolution)
       })
-  }, [])
+  }, [setSolution])
   
   
   return (
