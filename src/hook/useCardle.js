@@ -42,7 +42,11 @@ const useCardle = (solution) => {
         console.log('key pressed - ', key)
 
         // check if key pressed is a char or int and add to guess
-        if (/^[A-Za-z0-9]$/.test(key)) {
+        if (key === 'Backspace') {
+            setCurrentGuess(prev => prev.slice(0, -1))
+            return
+        }
+        if (/^[A-Za-z0-9" "]$/.test(key)) {
             setCurrentGuess((prev) => {
                 return prev + key
             })
@@ -74,10 +78,6 @@ const useCardle = (solution) => {
         //     return
         // }
         
-        // if (key === 'Backspace') {
-        //     setCurrentGuess(prev => prev.slice(0, -1))
-        //     return
-        // }
     }
 
 

@@ -15,7 +15,7 @@ function App() {
         const randomSolution = json[Math.floor(Math.random() * json.length)]
 
         // update state
-        setSolution(randomSolution.Name)
+        setSolution(randomSolution.Name + randomSolution.Year)
       })
   }, [setSolution])
   
