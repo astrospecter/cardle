@@ -10,9 +10,9 @@ export default function Cardle({ solution }) {
         return () => window.removeEventListener('keyup', handleKeyup)
     }, [handleKeyup])
 
-    useEffect(() => {
-        console.log(guesses, turn, isCorrect)
-    }, [guesses, turn, isCorrect])
+    // useEffect(() => {
+    //     console.log(guesses, turn, isCorrect)
+    // }, [guesses, turn, isCorrect])
 
     return (
         <div>

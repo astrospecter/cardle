@@ -1,5 +1,6 @@
 import './App.css';
 import React, { Component, useEffect, useState } from "react";
+import Cardle from './components/cardle'
 
 function App() {
   const [solution, setSolution] = useState(null)
@@ -22,7 +23,7 @@ function App() {
   return (
     <div className="App">
       <h1>Cardle</h1>
-      {solution && <div>Solution is: {solution} </div>}
+      {solution && <Cardle solution={solution} />}
     </div>
   )
 }
